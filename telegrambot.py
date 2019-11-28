@@ -29,8 +29,9 @@ def echo(message: Message):
 	elif 'сколько матов' in message.text.lower():
 		bot.reply_to(message, 'На данный момент матов - ' + str(swearing['count']))
 
-@bot.message_handler(content_types=['new_chat_members'])
-def greeting(message):
-    bot.reply_to(message, text='Hey =)')
+@bot.message_handler(content_types=['new_chat_members'])		
+def handler_new_member(message):
+    user_name = message.new_chat_member.first_name
+    bot.send_message(-303816860, "Добро пожаловать, {0}!".format(user_name))
 		
 bot.polling(none_stop = True)

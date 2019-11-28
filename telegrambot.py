@@ -27,7 +27,7 @@ def echo(message: Message):
 		bot.reply_to(message, 'Привет! Как твои дела?)')
 		bot.send_message(-303816860, 'Снова опаздываешь...')
 	elif 'сколько матов' in message.text.lower():
-		bot.reply_to(message, 'На данный момент матов - ' + swearing['count'])
+		bot.reply_to(message, 'На данный момент матов - ' + str(swearing['count']))
 
 @bot.message_handler(content_types=['new_chat_members'])
 def greeting(message):

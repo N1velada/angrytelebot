@@ -16,7 +16,6 @@ def echo(message: Message):
 		bot.reply_to(message, 'не матерись -_-')
 	elif 'привет' in message.text.lower():
 		bot.reply_to(message, 'Привет! Как твои дела?)')
-		bot.send_message(message, 'Снова опаздывать будешь?')
 #		curent_number = increase(curent_number)
 #	elif 'сколько матов уже' in message.text:
 #		bot.reply_to(message, str(current_number) + '. Живи пока.')

@@ -19,20 +19,17 @@ def echo(message: Message):
 		if phrase in message.text.lower():
 			bot.send_message(-303816860, 'Это слово есть в списке фраз, в скором времени я научусь реагировать на него')
 
-	if 'пиздец' in message.text.lower():
-		bot.reply_to(message, 'как это грубо.')
-		swearing['now2'] += 1
-	elif 'бля' in message.text.lower():
+	if 'бля' in message.text.lower():
 		bot.reply_to(message, 'не матерись -_-')
-		swearing['now2'] += 1
+		swearing[now2] += 1
 	elif 'писос' in message.text.lower():
 		bot.reply_to(message, 'мягко, но все равно мало приятного')
-		swearing['now2'] += 1
+		swearing[now2] += 1
 	elif 'привет' in message.text.lower():
 		bot.reply_to(message, 'Привет! Как твои дела?)')
 		#bot.send_message(-303816860, 'Снова опаздываешь...')
 	elif 'сколько матов' in message.text.lower():
-		bot.reply_to(message, 'На данный момент матов - ' + str(swearing['now2']))
+		bot.reply_to(message, 'На данный момент матов - ' + str(swearing[now2]))
 
 @bot.message_handler(content_types=['new_chat_members'])		
 def handler_new_member(message):

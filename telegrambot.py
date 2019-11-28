@@ -32,6 +32,6 @@ def echo(message: Message):
 @bot.message_handler(content_types=['new_chat_members'])		
 def handler_new_member(message):
     user_name = message.new_chat_member.username
-    bot.send_message(-303816860, 'Добро пожаловать, !' + user_name)
+    bot.send_message(-303816860, 'Добро пожаловать, @' + user_name + '!')
 		
 bot.polling(none_stop = True)

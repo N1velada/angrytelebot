@@ -1,22 +1,28 @@
 import telebot
-from dates import swearing
+import datetime
 from telebot.types import Message
 from telebot import types
 
 bot  =  telebot.TeleBot('1030274384:AAGleQhVCCfv0y1xU5hVpRUugl4PZg8XDKI')
 
-phrases = ['сука', 'лол']
+now = datetime.datetime.now()
+now2 = now.strftime("%d-%m-%Y")
+swearing = {}
+if now2 not in swearing:
+    swearing[now2] = 0
+
+phrases = ['сука', 'лол', 'хуй', 'пизд',]
 
 @bot.message_handler(func=lambda m: True)
 def echo(message: Message):
 	for phrase in phrases:
 		if phrase in message.text.lower():
-			bot.send_message(-303816860, 'Это слово есть в списке фраз')
+			bot.send_message(-303816860, 'Это слово есть в списке фраз, в скором времени я научусь реагировать на него')
 
 	if 'пиздец' in message.text.lower():
 		bot.reply_to(message, 'как это грубо.')
 		swearing['now2'] += 1
-	elif 'блять' in message.text.lower():
+	elif 'бля' in message.text.lower():
 		bot.reply_to(message, 'не матерись -_-')
 		swearing['now2'] += 1
 	elif 'писос' in message.text.lower():

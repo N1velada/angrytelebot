@@ -7,8 +7,14 @@ bot  =  telebot.TeleBot('1030274384:AAGleQhVCCfv0y1xU5hVpRUugl4PZg8XDKI')
 
 #current_number = 0
 
+phrases = ['сука', 'лол']
+
 @bot.message_handler(func=lambda m: True)
 def echo(message: Message):
+	for phrase in phrases:
+		if phrase in message.text.lower():
+			bot.send_message(-303816860, 'Это слово есть в списке фраз')
+
 	if 'пиздец' in message.text.lower():
 		bot.reply_to(message, 'ты серьезно?')
 #		curent_number = increase(curent_number)

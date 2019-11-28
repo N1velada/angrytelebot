@@ -18,7 +18,6 @@ pefile==2019.4.18
 Pillow==6.2.1
 PyAutoGUI==0.9.48
 PyGetWindow==0.0.8
-PyInstaller==4.0.dev0+1eadfa55f2
 pylint==2.4.4
 PyMsgBox==1.0.7
 pyowm==2.10.0

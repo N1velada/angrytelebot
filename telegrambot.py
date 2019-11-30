@@ -17,11 +17,15 @@ phrases = ['сука', 'лол', 'хуй', 'пизд']
 def echo(message: Message):
 	for phrase in phrases:
 		if phrase in message.text.lower():
-			bot.send_message(-303816860, 'Это слово есть в списке фраз, в скором времени я научусь реагировать на него')
+			bot.reply_to(message, 'Это слово есть в списке фраз, в скором времени я научусь реагировать на него')
 
 	if 'бля' in message.text.lower():
 		bot.reply_to(message, 'не матерись -_-')
 		swearing[now2] += 1
+	elif 'бот запомни слово' in message.text.lower():
+		bot.reply_to(message, 'окич )')
+		phrases.append(message.text[18:])
+
 	elif 'писос' in message.text.lower():
 		bot.reply_to(message, 'мягко, но все равно мало приятного')
 		swearing[now2] += 1

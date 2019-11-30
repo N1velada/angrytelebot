@@ -25,6 +25,8 @@ def echo(message: Message):
 	elif 'писос' in message.text.lower():
 		bot.reply_to(message, 'мягко, но все равно мало приятного')
 		swearing[now2] += 1
+	elif 'не матерись' in message.text.lower():
+		bot.reply_to(message, 'Не забирай мою работу!')
 	elif 'привет' in message.text.lower():
 		bot.reply_to(message, 'Привет! Как твои дела?)')
 		#bot.send_message(-303816860, 'Снова опаздываешь...')

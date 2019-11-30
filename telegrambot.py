@@ -11,7 +11,7 @@ swearing = {}
 if now2 not in swearing:
     swearing[now2] = 0
 
-phrases = ['сука', 'лол', 'хуй', 'пизд',]
+phrases = ['сука', 'лол', 'хуй', 'пизд']
 
 @bot.message_handler(func=lambda m: True)
 def echo(message: Message):

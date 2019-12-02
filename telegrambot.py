@@ -30,6 +30,7 @@ def echo(message: Message):
 		        number2 = result[2] + 1
 		        cursor.execute("UPDATE Swearings SET Count = " + str(number2) + " WHERE ID = " + str(number))
 		        conn.commit()
+		        print(str(number2))
 	elif 'бот запомни слово' in message.text.lower():
 		bot.reply_to(message, 'окич )')
 		phrases.append(message.text[18:])

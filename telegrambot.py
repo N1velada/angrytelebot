@@ -12,8 +12,6 @@ cursor = conn.cursor()
 phrases = ['сука', 'лол', 'хуй', 'пизд']
 
 @bot.message_handler(func=lambda m: True)
-date = datetime.datetime.today()
-date2 = date.strftime("%Y.%m.%d")
 def echo(message: Message):
 	for phrase in phrases:
 		if phrase in message.text.lower():
@@ -22,6 +20,8 @@ def echo(message: Message):
 
 	if 'бля' in message.text.lower():
 		bot.reply_to(message, 'не матерись -_-')
+		date = datetime.datetime.today()
+		date2 = date.strftime("%Y.%m.%d")
 		cursor.execute("SELECT * FROM Swearings")
 		results = cursor.fetchall()
 		for result in results:
